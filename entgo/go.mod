@@ -9,7 +9,7 @@ require (
 	entgo.io/ent v0.14.5
 	github.com/XSAM/otelsql v0.41.0
 	github.com/alec404/go-libs v0.0.1
-	github.com/alec404/go-libs/id v0.0.2
+	github.com/alec404/go-libs/id v0.0.1
 	github.com/go-kratos/kratos/v2 v2.9.2
 	github.com/google/uuid v1.6.0
 	github.com/stretchr/testify v1.11.1
