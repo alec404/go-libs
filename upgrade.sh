@@ -19,3 +19,11 @@ go mod tidy
 cd $DIR/testing
 go get all
 go mod tidy
+
+cd $DIR/dingtalk
+go get all
+go mod tidy
+
+cd $DIR/esquery
+go get all
+go mod tidy
