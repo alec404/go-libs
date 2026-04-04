@@ -42,6 +42,13 @@ func TimeDifferenceDays(startDate, endDate time.Time) int {
 	return int(math.Ceil(hours / 24))
 }
 
+func DaySecondsDifferenceMinutes(startSecond, endSecond int64) float64 {
+	startTime := time.Unix(startSecond, 0)
+	endTime := time.Unix(endSecond, 0)
+	duration := endTime.Sub(startTime)
+	return duration.Minutes()
+}
+
 func DaySecondsDifferenceHours(startSecond, endSecond int64) float64 {
 	startTime := time.Unix(startSecond, 0)
 	endTime := time.Unix(endSecond, 0)

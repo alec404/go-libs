@@ -55,3 +55,9 @@ func TestSecondsDifferenceDays(t *testing.T) {
 	assert.True(t, (SecondsDifferenceDays(toSecond("2017-09-01"), toSecond("2017-09-02")))%1 == 0)
 	assert.True(t, (SecondsDifferenceDays(toSecond("2017-09-01"), toSecond("2017-09-03")))%2 == 0)
 }
+
+func TestDaySecondsDifferenceMinutes(t *testing.T) {
+	assert.Equal(t, DaySecondsDifferenceMinutes(toSecond("2017-09-01"), toSecond("2017-09-01")), float64(0))
+	assert.Equal(t, DaySecondsDifferenceMinutes(toSecond("2017-09-01"), toSecond("2017-09-02")), float64(1440))
+	assert.Equal(t, DaySecondsDifferenceMinutes(toSecond("2017-09-01"), toSecond("2017-09-03")), float64(2880))
+}
