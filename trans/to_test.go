@@ -16,6 +16,29 @@ func TestPtr(t *testing.T) {
 	}
 }
 
+func TestClonePtr(t *testing.T) {
+	original := Ptr("value")
+	cloned := ClonePtr(original)
+	if cloned == nil {
+		t.Fatal("unexpected nil clone")
+	}
+	if cloned == original {
+		t.Fatal("expected a new pointer")
+	}
+	if *cloned != *original {
+		t.Fatalf("got %q, want %q", *cloned, *original)
+	}
+
+	*cloned = "changed"
+	if *original != "value" {
+		t.Fatalf("clone mutation changed original to %q", *original)
+	}
+
+	if ClonePtr[string](nil) != nil {
+		t.Fatal("expected nil clone for nil input")
+	}
+}
+
 func TestSliceOfPtrs(t *testing.T) {
 	arr := SliceOfPtrs[int]()
 	if len(arr) != 0 {

@@ -8,6 +8,15 @@ func Ptr[T any](v T) *T {
 	return &v
 }
 
+// ClonePtr returns a new pointer containing the value referenced by v.
+// It returns nil when v is nil.
+func ClonePtr[T any](v *T) *T {
+	if v == nil {
+		return nil
+	}
+	return Ptr(*v)
+}
+
 // SliceOfPtrs returns a slice of *T from the specified values.
 func SliceOfPtrs[T any](vv ...T) []*T {
 	slc := make([]*T, len(vv))
