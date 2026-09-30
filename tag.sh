@@ -10,5 +10,6 @@ git tag entgo/v0.0.2
 git tag testing/v0.0.1
 git tag dingtalk/v0.0.1
 git tag esquery/v0.0.1
+git tag restyx/v0.0.1
 
 git push origin --tags
